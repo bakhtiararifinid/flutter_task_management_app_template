@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:task_management_app/pages/home_page.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({Key? key}) : super(key: key);
+
+  static const routeName = '/on_boarding';
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +40,8 @@ class _Image extends StatelessWidget {
       children: [
         SizedBox(
           height: double.infinity,
-          child: Image.network(
-            'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2944&q=80',
+          child: Image.asset(
+            'assets/images/glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -157,7 +160,7 @@ class _Button extends StatelessWidget {
       child: SizedBox(
         height: 48,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () => _gotoHomePage(context),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
@@ -169,5 +172,9 @@ class _Button extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _gotoHomePage(BuildContext context) {
+    Navigator.of(context).pushReplacementNamed(HomePage.routeName);
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_management_app/pages/home_page.dart';
 import 'package:task_management_app/pages/on_boarding_page.dart';
 
 class App extends StatelessWidget {
@@ -11,8 +12,12 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const OnBoardingPage(),
       debugShowCheckedModeBanner: false,
+      initialRoute: OnBoardingPage.routeName,
+      routes: {
+        OnBoardingPage.routeName: (context) => const OnBoardingPage(),
+        HomePage.routeName: (context) => const HomePage(),
+      },
     );
   }
 }
