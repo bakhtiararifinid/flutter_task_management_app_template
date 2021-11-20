@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_management_app/pages/task_detail_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -160,7 +161,7 @@ class _Content extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView(
-        padding: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.all(16),
         children: [
           const _TaskCard(
             title: 'Week 1 College Tasks',
@@ -208,9 +209,10 @@ class _TaskCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
+    return GestureDetector(
+      onTap: () => _gotoTaskDetailPage(context),
       child: Card(
+        margin: const EdgeInsets.only(bottom: 16),
         child: Column(
           children: [
             ListTile(
@@ -258,6 +260,10 @@ class _TaskCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _gotoTaskDetailPage(BuildContext context) {
+    Navigator.of(context).pushNamed(TaskDetailPage.routeName);
   }
 
   List<Widget> get _getMembers => members

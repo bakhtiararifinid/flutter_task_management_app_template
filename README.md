@@ -2,8 +2,8 @@
 
 Task Management app template built with flutter.
 
-| ![](assets/screenshots/on_boarding_page.png) | ![](assets/screenshots/home_page.png) |
-|:---:|:---:|
+| ![](assets/screenshots/on_boarding_page.png) | ![](assets/screenshots/home_page.png) | ![](assets/screenshots/task_detail_page.png) |
+|:---:|:---:|:---:|
 
 This template was based on [this design](https://dribbble.com/shots/16825690-Task-Management-App) by [Arvin Aradhana](https://dribbble.com/arvinaradhana) on [dribble](https://dribbble.com)
 
